@@ -1,0 +1,236 @@
+lstT =[]    
+lstS=[]
+op=[]
+Qlst=[]
+dt1={}
+while(True):
+    print("Enter 1 for  Teacher  :") 
+    print("Enter 2 for  Student  :") 
+    print("Enter 3 for  Exit:",end="\n\n")
+        
+
+    ch=int(input("Enter your choice :"))
+        
+
+    if ch ==1:
+        while(True):
+                print("******************************")
+                print("Welcome Teacher :") 
+                print("******************************",end="\n\n")
+
+                print("Enter 1 for Registration  :") 
+                print("Enter 2 for Login  :")    
+                print("Enter 3 for Exit  :",end="\n\n")
+                
+                ch1=int(input("Enter your choice"))
+                
+                
+                
+                print("******************************",end="\n\n")
+                
+                
+         
+                if ch1 ==1:
+                    input("Enter your Name  :") 
+                    E=input("Enter your Email  :") 
+                    P=input("Enter your password  :")
+                    
+                    d={"Email":E,"Password":P}
+                    lstT.append(d)
+                    
+                elif ch1==2:
+                    
+                    E2=input("Enter your Email  :") 
+                    P2=input("Enter your password  :")
+                    k=0
+                    for i in lstT:
+                        if i["Email"] == E2 and i["Password"] == P2:
+                            print("you succesfully Login")
+                            print("******************************",end="\n\n")
+                            k=1
+                            while(True):                            
+                                print("Enter 1 for  Add a question  :") 
+                                print("Enter 2 for  Update a question  :") 
+                                print("Enter 3 for  Delete a question :")
+                                print("Enter 4 for  display   :",end="\n\n") 
+                                
+                                chq=int(input("Enter your Choice :"))
+                                
+                                if chq==1:                            
+                                    Q2=input("Enter the Question  :")
+                                    op1=input("Enter the option1 :")
+                                    op2=input("Enter the option2 :")
+                                    op3=input("Enter the option3 :")
+                                    op4=input("Enter the option4 :")
+                                    while(True):
+                                        rop=input("Enter the right option :")
+                                        li=[op1,op2,op3,op4]
+                                        k2=0
+                                        for i in li:
+                                            if i==rop:
+                                                k2=k2+1
+                                                        
+                                        if k2==0:    
+                                            print("Not allowed")
+                                        if k2==1:
+                                            break
+                                 
+                                    
+                                        
+                                    dt1={"Question":Q2 ,"option":[op1,op2,op3,op4],"Rightoption":rop}
+                                    Qlst.append(dt1)
+                                
+                                    #Qlst=["Question":Q2 ,"option":[op1,op2,op3,op4],"Rightoption":rop]
+                                    print("successfully added",end="\n\n")
+                                    print("******************************",end="\n\n")
+                                    print(Qlst)
+                                    
+                                    
+                                elif chq==2:
+                                    Q2=input("Enter Existing question: ")
+                                    c=0
+                                    k1=0
+                                    for i in Qlst:
+                                        if i["Question"]==Q2 :
+                                            #Qlst.remove(c);
+                                            print("Question founded",end="\n\n")
+                                            k1=k1+1
+                                            
+                                            Q2=input("Enter the new Question :")
+                                            op1=input("Enter the new option1 :")
+                                            op2=input("Enter the new option2 :")
+                                            op3=input("Enter the new option3 :")
+                                            op4=input("Enter the new option4 :")
+                                           
+                                            
+                                            while(True):
+                                                rop=input("Enter the right option :")
+                                                li=[op1,op2,op3,op4]
+                                                k2=0
+                                                for i in li:
+                                                    if i==rop:
+                                                        k2=k2+1
+                                                                
+                                                if k2==0:    
+                                                    print("Not allowed")
+                                                if k2==1:
+                                                    break;
+                                         
+                                            
+                                            
+                                            dt1={"Question":Q2 ,"option":[op1,op2,op3,op4],"Rightoption":rop}
+                                            
+                                            #Qlst[c]=dt1
+                                            Qlst[c]={"Question":Q2 ,"option":[op1,op2,op3,op4],"Rightoption":rop}
+                                           
+                                                
+                                            print(Qlst)
+                                        c=c+1;    
+                                    if k1==0:
+                                        print("Enter a wrong Question")
+                                                
+                                elif chq==3:
+                                    Q2=input("Enter Existing question: ")
+                                    c=0
+                                    k1=0
+                                    for i in Qlst:
+                                        if i["Question"]==Q2:
+                                            del Qlst[c];
+                                            print("Question deleted",end="\n\n")
+                                            k1=1
+                                        c=c+1;    
+                                    if k1==0:
+                                        print("you Enter a wrong question")
+                                        print(QLst)
+                                
+                                elif chq==4:
+                                    print(Qlst);
+                                    break;
+                                else:
+                                    print("you enter a wrong choice")
+                                    break;    
+        
+                    if k==0:
+                            print("You Enter a wrong Email or Password")
+                            print("******************************",end="\n\n")
+                    
+                        
+                elif ch1==3:
+                    break;
+                    print("******************************",end="\n\n")
+                else:
+                    print("you enter a wrong choice")
+                    break;
+                    print("******************************",end="\n\n")
+                
+            
+
+    elif ch ==2:
+        while(True):
+            print("******************************")
+            print("Welcome Student :")
+            print("******************************",end="\n\n")
+
+            print("Enter 1 for Registration  :")
+            print("Enter 2 for Login  :")
+            print("Enter 3 for Exit  :",end="\n\n")
+            ch2=int(input("Enter your choice"))
+            
+            if ch2==1:
+                input("Enter your Name  :") 
+                E2=input("Enter your Email  :") 
+                P2=input("Enter your password  :")
+
+                d1={"Email":E2,"Password":P2}
+                lstS.append(d1)
+                
+            elif ch2==2:
+                E3=input("Enter your Email  :")
+                P3=input("Enter your password  :")
+                c=0
+                for i in lstS:
+                    
+                    if i["Email"]==E3 and i["Password"]==P3 :
+                        print("you succesfully Login");
+                        print("******************************",end="\n\n")
+                        c+=1
+                        mark=0
+                        total=0
+                        for i in Qlst:
+                            print(i["Question"])
+                            total+=1
+                            for j in i["option"]:
+                                print(j)
+                            z=input("Enter your answer :")
+                            if z==i["Rightoption"]:
+                                mark+=1
+                            
+                                
+                    print("Total marks is " ,end="=")       
+                    print(mark,end="/")
+                    print(total)
+                        
+                        
+                if c==0:
+                    print("You Enter a wrong email or password")
+                    print("******************************",end="\n\n")
+            elif ch2==3:
+                break;
+                print("******************************",end="\n\n")
+            else:
+                print("you enter a wrong choice");
+                break;
+                print("******************************",end="\n\n")
+    elif ch==3:
+        break;
+        print("******************************",end="\n\n")
+        
+    else:
+        print("******************************")
+        print("You enter a wrong choice");
+        break;
+        print("******************************",end="\n\n")
+        
+
+print("******************************")
+   
